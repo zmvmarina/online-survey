@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Create a Survey{% endblock %}
+
+{% block content %}
+  <h2> Add Question to Survey " {{survey_name}} "</h2>
+
+  <form method="POST" action="/add-question">
+    <label for="question">Question: </label><br>
+    <input type="text" id="question" name="question"><br>
+    <label for="op1">Option 1</label><br>
+    <input type="text" id="op" name="op1"><br>
+    <label for="op2">Option 2</label><br>
+    <input type="text" id="op" name="op2" ><br>
+    <label for="op3">Option 3</label><br>
+    <input type="text" id="op" name="op3"><br>
+    <label for="op4">Option 4</label><br>
+    <input type="text" id="op" name="op4"><br>
+    <input type="submit" id="survey_name_submit" name="next" value="Next Question">
+  </form>
+<!-- 
+  <form method="POST" action="/add-question">
+    <input type="submit" id="survey_name_submit" name="next" value="Next Question">
+  </form> -->
+  <form method="POST" action="/post-survey">  
+    <input type="submit" id="survey_name_save" name="save" value="Save Survey">
+  </form>
+
+  {% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Survey2020{% endblock %}
+
+{% block content %}
+
+<h1>Welcome!</h1>
+<form method="POST" name="create_survey" action="/create-survey">
+  <!--  -->
+  <input type="submit" value="Create a survey" />
+</form>
+
+<form method="POST" name="start_survey" action="{{ url_for ('start_survey') }}">
+  
+  <p>Or pick a survey:</p>
+
+  <select name="survey_id">
+
+    {% for survey in surveys if survey.active %}
+
+    <option value="{{ survey.id }}"> {{ survey.survey }}</option>
+
+    {% endfor %}
+  </select>
+  <button>Go</button>
+  </form>
+
+  <form method="POST" name="download_survey" action="{{ url_for ('download_survey') }}">
+  
+  <p>Or download survey's data:</p>
+
+  <select name="survey_id">
+
+    {% for survey in surveys if survey.active %}
+
+    <option value="{{ survey.id }}"> {{ survey.survey }}</option>
+
+    {% endfor %}
+  </select>
+  <button>Go</button>
+</form>
+
+{% endblock %}

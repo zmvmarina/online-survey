@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Create a Survey{% endblock %}
+
+{% block content %}
+
+<h2>Name your survey</h2>
+<!-- <form action="{{ url_for('name_survey') }}" method=" npost">
+  <input type="text" id="survey_name" name="survey_name">
+</form> -->
+
+<form method="POST" action="{{ url_for ('name_survey') }}">
+  <label for="survey_name">Name:</label><br>
+  <input type="text" id="survey_name" name="survey_name"> <br>
+  <label for="survey_instruction">Instructions:</label><br>
+  <input type="text" id="survey_instruction" name="survey_instruction"> <br>
+  <input type="submit" id="survey_name_submit" name="submit" value="Continue">
+</form>
+
+
+{% endblock %}
