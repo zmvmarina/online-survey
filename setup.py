@@ -11,7 +11,7 @@ setup(
         'Flask==1.1.1',
         'Flask-DebugToolbar==0.11.0',
         'itsdangerous==1.1.0',
-        'Jinja2==2.11.1',
+        'Jinja2==2.11.3',
         'MarkupSafe==1.1.1',
         'Werkzeug==1.0.0',
     ]
